@@ -66,11 +66,12 @@
   <section class="flex justify-center">
     <div class="bg-blue-300 bg-opacity-100 rounded-lg px-10 py-6 drop-shadow-lg shadow-xl w-fit text-center">
       <p class="font-handwriting text-xl mb-3 text-white drop-shadow-md select-text">Beli Tiket Sekarang Juga</p>
-      <button href="/tiket"
-        class="btn-shadow bg-lime-400 px-6 py-2 rounded-md font-semibold hover:bg-lime-500 text-black transition-colors duration-300 focus:ring-4 focus:ring-lime-300"
-      >
+      <x-nav-link href="/tiket">
+      <button
+        class="btn-shadow bg-lime-400 px-6 py-2 rounded-md font-semibold hover:bg-lime-500 text-black transition-colors duration-300 focus:ring-4 focus:ring-lime-300">
         Pilih Paket
       </button>
+      </x-nav-link>
     </div>
   </section>
 

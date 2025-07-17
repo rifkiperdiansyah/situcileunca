@@ -3,7 +3,8 @@
 use Illuminate\support\Arr;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home']);
@@ -29,6 +30,12 @@ Route::get('/about', function () {
     return view('about', ['title' => 'About']);
 });
 
-Route::get('/pembelian', [App\Http\Controllers\PembelianController::class, 'index']);
-Route::post('/pembelian', [App\Http\Controllers\PembelianController::class, 'store']);
-Route::get('/pembelian/success', [App\Http\Controllers\PembelianController::class, 'success']);
+
+Route::get('/login', function () {
+    return view('login', ['title' => 'Login']);
+});
+
+Route::get('login', [LoginController::class, 'index']);
+Route::get('register', [RegisterController::class, 'index']);
+
+
