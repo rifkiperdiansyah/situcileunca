@@ -19,11 +19,20 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+      if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard-admin.index');
+            } elseif ($user->role === 'user') {
+                return redirect()->route('dashboard-user.index');
+            } else {
+                Auth::logout();
+                return redirect()->back()->withErrors(['email' => 'Role tidak dikenali.']);
+            }
         }
-        return back()->withErrors([
+
+        return redirect()->back()->withErrors([
             'email' => 'Email atau password salah.',
         ]);
     }
@@ -36,5 +45,8 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('login.index');
+
     }
+
+    
 }
