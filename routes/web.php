@@ -22,7 +22,7 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
-  
+
        return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 
@@ -53,12 +53,17 @@ Route::post('register', [RegisterController::class, 'store']);
 // Dashboard routes
 // User Routes
 Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/dashboard-admin', [UserController::class, 'dashboard'])->name('index');
+    Route::get('/dashboard-user', [UserController::class, 'dashboard'])->name('dashboard-user.index');
+
+    Route::post('/order-ticket', [TransactionController::class, 'createTransaction'])->name('order-ticket.create');
+    Route::get('/transaction/success', function () {
+        return view('transaction.success');
+    })->name('transaction.success');
 });
 
 // Admin Routes
 Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/dashboard-user', [AdminController::class, 'dashboard'])->name('index');
+    Route::get('/dashboard-admin', [AdminController::class, 'dashboard'])->name('dashboard-admin.index');
 });
 // // Dashboard User
 // Route::get('/dashboard-user', [DashboardUserController::class, 'index'])->middleware('auth');

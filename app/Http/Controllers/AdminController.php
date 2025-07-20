@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('dashboard-admin'); // Make sure this view exists
+        return view('dashboard-admin.index'); // Make sure this view exists
     }
 }
