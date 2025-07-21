@@ -7,6 +7,8 @@
      <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.9/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
   </head>
   <body class="h-full" >
 
@@ -15,7 +17,7 @@
   <x-navbar></x-navbar>
 
 
-  
+
   <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       <!-- Your content -->
@@ -27,4 +29,4 @@
 </div>
 
   </body>
-</html> 
+</html>

@@ -67,7 +67,7 @@ class TransactionController extends Controller
 
             $transaction = Transaction::create([
                 'user_id' => Auth::user()->id ?? null,
-                'tiket_id' => 1,
+                // 'tiket_id' => 1,
                 'name_customer' => $request->name ?? null,
                 'no_phone' => $request->phone ?? null,
                 'date_transaction' => $request->date ?? null,
@@ -86,4 +86,8 @@ class TransactionController extends Controller
         }
     }
 
+    public function print(Transaction $transaction)
+    {
+        return view('dashboard-user.print.index', compact('transaction'));
+    }
 }

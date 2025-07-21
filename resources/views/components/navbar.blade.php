@@ -22,7 +22,7 @@
                         <li class="nav-item dropdown">
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="{{ auth()->user()->role == 'admin' ? '/dashboard' : '/dashboard-user' }}">
+                                    <a class="dropdown-item" href="{{ auth()->user()->role == 'admin' ? '/dashboard-admin' : '/dashboard-user' }}">
                                         <i class="bi bi-justify-left"></i> Dashboard
                                     </a>
                                 </li>

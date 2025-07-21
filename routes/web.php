@@ -7,10 +7,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminTicketController;
+use App\Http\Controllers\AdminTransactionController;
 use App\Http\Controllers\TransactionController;
 Use App\Http\Controllers\DashboardUserTiketController;
+use App\Http\Controllers\ProfileController;
 Use App\Http\Controllers\UpdatePasswordController;
-
+use App\Models\Tiket;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home']);
@@ -29,7 +32,11 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 
 
 Route::get('/tiket', function () {
-    return view('tiket', ['title' => 'Tiket']);
+    return view('tiket', [
+        'title' => 'Tiket',
+        'tickets' => Tiket::all()
+        ]
+    );
 });
 
 Route::get('/about', function () {
@@ -59,11 +66,20 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/transaction/success', function () {
         return view('transaction.success');
     })->name('transaction.success');
+    Route::get('/transactions/print/{transaction}', [TransactionController::class, 'print'])->name('transactions.print');
 });
 
 // Admin Routes
 Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/dashboard-admin', [AdminController::class, 'dashboard'])->name('dashboard-admin.index');
+    Route::prefix('/dashboard-admin')->group(function () {
+        Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard-admin.index');
+
+        Route::resource('/tickets', AdminTicketController::class);
+        Route::resource('/transactions', AdminTransactionController::class);
+
+        Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+        Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    });
 });
 // // Dashboard User
 // Route::get('/dashboard-user', [DashboardUserController::class, 'index'])->middleware('auth');

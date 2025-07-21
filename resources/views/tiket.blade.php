@@ -29,20 +29,28 @@
                 <div class="ticket-box h-full">
                     <h2 class="text-lg font-semibold mb-4">Pilih Tiket Dibawah Ini</h2>
 
+                    @forelse ($tickets as $tiket)
+                        <label class="block w-full">
+                            <input type="radio" name="ticket_type" value="{{ $tiket->name }}" class="hidden peer" checked>
+                            <div
+                                class="w-full py-3 px-4 mt-2 rounded cursor-pointer text-white
+                                bg-blue-600
+                                peer-checked:bg-green-600 peer-checked:ring-2 peer-checked:ring-green-400 transition">
+                                <div class="font-semibold">Tiket {{ $tiket->name }} @if ($tiket->name == 'Rombongan')<span class="text-yellow-300 font-bold">5%</span>
+
+                                @endif</div>
+                                <div class="text-sm">IDR {{ $tiket->price }}</div>
+                            </div>
+                        </label>
+                    @empty
+                        <p>Tiket tidak tersedia.</p>
+                    @endforelse
+
                     <!-- Tiket Per Orang -->
-                    <label class="block w-full">
-                        <input type="radio" name="ticket_type" value="per_orang" class="hidden peer" checked>
-                        <div
-                            class="w-full py-3 px-4 mt-2 rounded cursor-pointer text-white
-                            bg-blue-600
-                            peer-checked:bg-green-600 peer-checked:ring-2 peer-checked:ring-green-400 transition">
-                            <div class="font-semibold">Tiket Per Orang</div>
-                            <div class="text-sm">IDR 15.000</div>
-                        </div>
-                    </label>
+
 
                     <!-- Tiket Rombongan -->
-                    <label class="block w-full">
+                    {{-- <label class="block w-full">
                         <input type="radio" name="ticket_type" value="rombongan" class="hidden peer">
                         <div
                             class="w-full py-3 px-4 mt-4 rounded cursor-pointer text-white
@@ -53,7 +61,7 @@
                             </div>
                             <div class="text-sm">IDR 15.000</div>
                         </div>
-                    </label>
+                    </label> --}}
                 </div>
             </div>
 
@@ -125,9 +133,9 @@
         document.querySelectorAll('input[name="ticket_type"]').forEach(radio => {
             radio.addEventListener('change', function () {
                 const input = document.getElementById('ticketCount');
-                if (this.value === 'rombongan' && parseInt(input.value) < 10) {
+                if (this.value === 'Rombongan' && parseInt(input.value) < 10) {
                     input.value = 10;
-                } else if (this.value === 'per_orang') {
+                } else if (this.value === 'Per Orang') {
                     input.value = 1;
                 }
             });

@@ -14,7 +14,7 @@ return new class extends Migration
  Schema::create('tikets', function (Blueprint $table) {
     $table->id();
     $table->string('name');
-    $table->string('total_price');
+    $table->string('price');
     $table->string('description')->nullable();
     $table->timestamps();
 });

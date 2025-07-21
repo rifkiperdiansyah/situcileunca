@@ -25,9 +25,10 @@ class RegisterController extends Controller
 
         $validatedData['password'] = Hash::make($validatedData['password']);
 
+        $validatedData['role'] = 'user';
+
         User::create($validatedData);
 
-        
         return redirect('/login')->with('success', 'Registration successfull! Please login');
     }
 }
