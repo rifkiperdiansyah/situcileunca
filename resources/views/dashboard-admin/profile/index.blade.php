@@ -30,7 +30,7 @@
                 {{-- Email (readonly) --}}
                 <div>
                     <label class="block text-gray-700">Email</label>
-                    <input type="email" name="email" value="{{ Auth::user()->email }}" class="w-full border px-4 py-2 rounded" readonly>
+                    <input type="email" name="email" value="{{ Auth::user()->email }}" class="w-full border px-4 py-2 rounded">
                 </div>
 
                 {{-- Name --}}
