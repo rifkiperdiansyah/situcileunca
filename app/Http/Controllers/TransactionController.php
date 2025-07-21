@@ -43,13 +43,13 @@ class TransactionController extends Controller
                 'ticket_type' => 'required'
             ]);
 
-            if ($request->ticket_type === 'rombongan' && $request->ticket_count < 10) {
+            if ($request->ticket_type === 'Rombongan' && $request->ticket_count < 10) {
                 return back()->with('error', 'Jumlah tiket untuk rombongan minimal 10.');
             }
 
             $total = $request->ticket_count * 15000;
 
-            if ($request->ticket_type == 'rombongan') {
+            if ($request->ticket_type == 'Rombongan') {
                 $total = $total - ($total * 0.05);
             }
 
