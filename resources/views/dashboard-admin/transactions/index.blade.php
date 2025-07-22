@@ -14,6 +14,35 @@
             @endif
 
             <div class="overflow-x-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+                    <form method="GET" action="#" class="flex items-center gap-2">
+                        <label for="date" class="text-sm font-medium text-gray-700">Tanggal:</label>
+                        <input type="date" id="date" name="date" value="{{ request('date') }}"
+                            class="border border-gray-300 rounded px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:border-blue-500">
+                        <button type="submit"
+                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">
+                            Filter Harian
+                        </button>
+                    </form>
+
+                    <form method="GET" action="#" class="flex items-center gap-2">
+                        <label for="month" class="text-sm font-medium text-gray-700">Bulan:</label>
+                        <input type="month" id="month" name="month" value="{{ request('month') }}"
+                            class="border border-gray-300 rounded px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:border-blue-500">
+                        <button type="submit"
+                                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm">
+                            Filter Bulanan
+                        </button>
+                    </form>
+
+                    <div>
+                        <a href="{{ route('transactions.print-report', ['date' => request('date'), 'month' => request('month')]) }}"
+                        target="_blank" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 text-sm">
+                        🖨️ Print
+                        </a>
+                    </div>
+                </div>
+
                 <table class="min-w-full bg-white border border-gray-200 text-sm text-left">
                     <thead class="bg-gray-100 text-gray-700">
                         <tr>

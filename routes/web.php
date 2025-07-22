@@ -75,6 +75,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard-admin.index');
 
         Route::resource('/tickets', AdminTicketController::class);
+        Route::get('/transactions/print-report', [AdminTransactionController::class, 'printReport'])->name('transactions.print-report');
         Route::resource('/transactions', AdminTransactionController::class);
 
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
