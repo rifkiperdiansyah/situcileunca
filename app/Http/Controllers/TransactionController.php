@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Midtrans\Snap;
 use Midtrans\Config;
+use Illuminate\Support\Str;
 
 
 class TransactionController extends Controller
@@ -72,7 +73,9 @@ class TransactionController extends Controller
                 'no_phone' => $request->phone ?? null,
                 'date_transaction' => $request->date ?? null,
                 'amount' => $total ?? null,
-                'data_payment' => json_encode($params)
+                'data_payment' => json_encode($params),
+                'type' => Str::of($request->ticket_type)->lower()->replace(' ', '_'),
+                'quantity' => $request->ticket_count
             ]);
 
             $snapToken = Snap::getSnapToken($params);

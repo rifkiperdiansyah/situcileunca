@@ -9,7 +9,17 @@ class Transaction extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'tiket_id', 'name_customer', 'no_phone', 'date_transaction', 'amount', 'data_payment'];
+    protected $fillable = [
+        'user_id',
+        'tiket_id',
+        'name_customer',
+        'no_phone',
+        'date_transaction',
+        'amount',
+        'data_payment',
+        'quantity',
+        'type',
+    ];
 
     public function ticket()
     {

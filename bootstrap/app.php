@@ -21,3 +21,5 @@ return Application::configure(basePath: dirname(__DIR__))
         // Optional: custom error handling
     })
     ->create();
+
+class_alias(SimpleSoftwareIO\QrCode\Facades\QrCode::class, 'QrCode');
