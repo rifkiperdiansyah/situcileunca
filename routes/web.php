@@ -37,7 +37,7 @@ Route::get('/tiket', function () {
         'tickets' => Tiket::all()
         ]
     );
-});
+})->name('tiket');
 
 Route::get('/about', function () {
     return view('about', ['title' => 'About']);
