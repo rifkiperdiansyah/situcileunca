@@ -25,7 +25,7 @@ class LoginController extends Controller
             if ($user->role === 'admin') {
                 return redirect()->route('dashboard-admin.index');
             } elseif ($user->role === 'user') {
-                return redirect()->route('dashboard-user.index');
+                return redirect()->route('tiket');
             } else {
                 Auth::logout();
                 return redirect()->back()->withErrors(['email' => 'Role tidak dikenali.']);

@@ -71,19 +71,19 @@
                     <h2 class="text-lg font-semibold">Formulir Pemesanan</h2>
 
                     <label class="input-label">Nama</label>
-                    <input type="text" name="name" value="{{ old('name') }}" class="w-full p-2 border border-gray-300 rounded" placeholder="Masukkan Nama">
+                    <input type="text" name="name" value="{{ old('name', auth()->user()->name ?? '') }}" class="w-full p-2 border border-gray-300 rounded" placeholder="Masukkan Nama">
                     @error('name')
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
 
                     <label class="input-label">Email</label>
-                    <input type="email" name="email" value="{{ old('email') }}" class="w-full p-2 border border-gray-300 rounded" placeholder="Masukkan Email">
+                    <input type="email" name="email" value="{{ old('email', auth()->user()->email ?? '') }}" class="w-full p-2 border border-gray-300 rounded" placeholder="Masukkan Email">
                     @error('email')
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
 
                     <label class="input-label">Nomor Telepon</label>
-                    <input type="tel" name="phone" value="{{ old('phone') }}" class="w-full p-2 border border-gray-300 rounded" placeholder="Masukkan Nomor Telepon">
+                    <input type="tel" name="phone" value="{{ old('phone', auth()->user()->no_phone ?? '') }}" class="w-full p-2 border border-gray-300 rounded" placeholder="Masukkan Nomor Telepon">
                     @error('phone')
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
