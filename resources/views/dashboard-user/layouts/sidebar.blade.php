@@ -2,23 +2,13 @@
 <aside class="fixed top-[88px] inset-y-0 left-0 z-40 w-64 bg-white border-r shadow-md hidden md:block">
     <div class="p-4">
         <nav class="space-y-2">
-            <a href="/dashboard-admin"
-                class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 {{ Request::is('dashboard-admin') ? 'bg-gray-200 font-semibold' : '' }}">
-                <i class="bi bi-house"></i>
-                Dashboard
-            </a>
-            <a href="/dashboard-admin/tickets"
-                class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 {{ Request::is('dashboard-admin/tickets*') ? 'bg-gray-200 font-semibold' : '' }}">
-                <i class="bi bi-ticket-detailed"></i>
-                Data Ticket
-            </a>
-            <a href="/dashboard-admin/transactions"
-                class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 {{ Request::is('dashboard-admin/transactions*') ? 'bg-gray-200 font-semibold' : '' }}">
+            <a href="/dashboard-user"
+                class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 {{ Request::is('dashboard-user') ? 'bg-gray-200 font-semibold' : '' }}">
                 <i class="bi bi-file-earmark"></i>
                 Data Order
             </a>
-            <a href="/dashboard-admin/profile"
-                class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 {{ Request::is('dashboard-admin/profile*') ? 'bg-gray-200 font-semibold' : '' }}">
+            <a href="/dashboard-user/profile-user"
+                class="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100 {{ Request::is('dashboard-user/profile-user') ? 'bg-gray-200 font-semibold' : '' }}">
                 <i class="bi bi-person-badge-fill"></i>
                 Profile
             </a>
@@ -46,7 +36,6 @@
             </button>
         </div>
         <div class="p-4 space-y-2">
-
         </div>
     </div>
 </div>

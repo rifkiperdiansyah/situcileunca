@@ -1,7 +1,7 @@
 <x-layout>
     <div class="min-h-screen flex">
         {{-- Sidebar --}}
-        @include('dashboard-admin.layouts.sidebar')
+        @include('dashboard-user.layouts.sidebar')
 
         {{-- Konten Utama --}}
         <div class="flex-1 ml-64 p-6">
@@ -13,7 +13,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+            <form action="{{ route('profile-user.update') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                 @csrf
                 @method('PUT')
 

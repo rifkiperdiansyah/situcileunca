@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
     public function index(){
-        return view('dashboard-admin.profile.index');
+        if (Auth::user()->role === 'admin') {
+            return view('dashboard-admin.profile.index');
+        }
+        return view('dashboard-user.profile.index');
     }
 
     public function update(Request $request)
@@ -18,9 +21,14 @@ class ProfileController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->no_phone = $request->no_phone;
 
         $user->save();
 
-        return redirect()->route('profile.index')->with('success', 'Profil berhasil diperbarui.');
+        if ($user->role === 'admin') {
+            return redirect()->route('profile.index');
+        } else {
+            return redirect()->route('profile-user.index');
+        }
     }
 }

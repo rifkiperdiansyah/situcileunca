@@ -62,6 +62,9 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/dashboard-user', [UserController::class, 'dashboard'])->name('dashboard-user.index');
 
+    Route::get('dashboard-user/profile-user', [ProfileController::class, 'index'])->name('profile-user.index');
+    Route::put('dashboard-user/profile-user/update', [ProfileController::class, 'update'])->name('profile-user.update');
+
     Route::post('/order-ticket', [TransactionController::class, 'createTransaction'])->name('order-ticket.create');
     Route::get('/transaction/success', function () {
         return view('transaction.success');
