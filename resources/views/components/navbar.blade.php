@@ -1,3 +1,4 @@
+
 <nav class="bg-gray-100" x-data="{ isOpen: false }">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -10,7 +11,7 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                         <x-nav-link href="/tiket" :active="request()->is('tiket')">Beli Tiket</x-nav-link>
-                        <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+                        <x-nav-link href="/about" :active="request()->is('about')">Tentang Kami</x-nav-link>
                     </div>
                 </div>
             </div>
@@ -70,7 +71,7 @@
         <div class="space-y-1 px-2 pt-2 pb-3">
             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
             <x-nav-link href="/tiket" :active="request()->is('tiket')">Beli Tiket</x-nav-link>
-            <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+            <x-nav-link href="/about" :active="request()->is('about')">Tentang Kami</x-nav-link>
         </div>
         @auth
             <div class="border-t border-gray-200 pt-4 pb-3 px-2">

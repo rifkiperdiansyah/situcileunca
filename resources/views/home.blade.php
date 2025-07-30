@@ -76,75 +76,86 @@
   </section>
 
   <!-- DESTINATION INFORMATION -->
-  <section class="max-w-7xl mx-auto py-6 px-6">
-    <div class="text-center mb-12 select-text">
+
+    
+      <div class="text-center mb-5 mt-10 select-text">
       <p class="uppercase font-extrabold text-lg tracking-widest drop-shadow-md">Informasi Destinasi Wisata</p>
       <p class="font-script text-3xl text-sky-600 drop-shadow-sm italic">Situ Cileunca</p>
     </div>
+<div id="gallery" class="relative w-full text-center h-50 mb-25" data-carousel="static">
 
-    <!-- Cards carousel with arrows on sides -->
-    <div class="relative flex items-center justify-center select-none">
-      
-      <!-- Left arrow -->
-      <button aria-label="Previous" class="absolute left-0 text-4xl text-gray-900 hover:text-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-300 rounded px-2 z-10">
-        ⟸ <!-- double left arrow -->
-      </button>
+    <!-- Carousel wrapper -->
 
-      <!-- Cards container -->
-      <div class="flex space-x-8 overflow-x-auto scrollbar-hide px-12 snap-x">
-        <!-- Card 1 -->
-        <div class="min-w-[240px] snap-center bg-white rounded-2xl overflow-hidden card-shadow relative cursor-pointer">
-          <img
-            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c3af7785-825b-4c2b-a3ac-4be298b8f013.png"
-            alt="Scenic view of sunset over lake with a blue wooden boat on the shore at Situ Cileunca"
-            class="w-full h-60 object-cover rounded-t-2xl"
-            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d0f3cde-cfe6-49fc-bd94-cf77368096c7.png';"
-          />
-          <div class="absolute top-4 left-4 text-white drop-shadow-lg font-handwriting text-lg italic space-y-1">
-            <p>Keliling Danau</p>
-            <p class="font-semibold">Situ Cileunca</p>
-          </div>
-          <div class="absolute bottom-3 right-3 text-white drop-shadow-lg text-sm font-semibold underline cursor-pointer">More Info</div>
+      <div class="pl-10 grid gap-4 relative h-30 overflow-hidden rounded-lg md:h-80">
+    <div class="grid grid-cols-4 gap-4 hidden  ease-in-out" data-carousel-item="active">
+        <div>
+          <a href="">
+            <img class="h-auto max-w-full rounded-lg" src="/img/danau.jpg" alt="" >
+            <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Danau</p>
+            <a href="">More info >></a>
+          </a>
         </div>
-
-        <!-- Card 2 -->
-        <div class="min-w-[240px] snap-center bg-white rounded-2xl overflow-hidden card-shadow relative cursor-pointer">
-          <img
-            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7cc3b2de-78a4-4fef-8c35-c0c5d5110ca4.png"
-            alt="Group of people rafting in blue raft on rapid river surrounded by greenery at Sungai Palayangan"
-            class="w-full h-60 object-cover rounded-t-2xl"
-            onerror="this.onerror=null;this.src='https://placehold.co/240x360?text=Image+Not+Available';"
-          />
-          <div class="absolute top-4 left-4 text-white drop-shadow-lg font-handwriting text-lg italic space-y-1">
-            <p>Rafting</p>
-            <p class="font-semibold">Sungai Palayangan</p>
-          </div>
-          <div class="absolute bottom-3 right-3 text-white drop-shadow-lg text-sm font-semibold underline cursor-pointer">More Info</div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="img/rrr.png" alt="">
+                        <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Rafting</p>
+            <a href="">More info >></a>
         </div>
-
-        <!-- Card 3 -->
-        <div class="min-w-[240px] snap-center bg-white rounded-2xl overflow-hidden card-shadow relative cursor-pointer">
-          <img
-            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/40c1e2e9-2b12-497a-be73-564f71dc8867.png"
-            alt="Person wearing helmet and harness on flyingfox zipline over a lake at Situ Cileunca"
-            class="w-full h-60 object-cover rounded-t-2xl"
-            onerror="this.onerror=null;this.src='https://placehold.co/240x360?text=Image+Not+Available';"
-          />
-          <div class="absolute top-4 left-4 text-white drop-shadow-lg font-handwriting text-lg italic space-y-1">
-            <p>Flyingfox</p>
-            <p class="font-semibold">Situ Cileunca</p>
-          </div>
-          <div class="absolute bottom-3 right-3 text-white drop-shadow-lg text-sm font-semibold underline cursor-pointer">More Info</div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="/img/fff.png" alt="">
+                    <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Flayingfox</p>
+            <a href="">More info >></a>
         </div>
-      </div>
-
-      <!-- Right arrow -->
-      <button aria-label="Next" class="absolute right-0 text-4xl text-gray-900 hover:text-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-300 rounded px-2 z-10">
-        ⟹ <!-- double right arrow -->
-      </button>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="img/aaa.jpg" alt="">
+                        <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">ATV</p>
+            <a href="">More info >></a>
+        </div>
     </div>
-  </section>
+</div>
 
+     <div class="grid gap-4 static h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="grid grid-cols-4 gap-4 hidden  ease-in-out" data-carousel-item="">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="img/ooo.jpg" alt="">
+           
+                        <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Offroad</p>
+            <a href="">More info >></a>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="img/ttt.jpg" alt="">
+           
+                        <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Team Building</p>
+            <a href="">More info >></a>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="img/ppp.png" alt="">
+        
+                        <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Paint Ball</p>
+            <a href="">More info >></a>
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="img/ggg.jpg" alt="">
+                    
+                        <p class="font-handwriting text-2xl text-sky-600 drop-shadow-sm italic">Fun Games</p>
+            <a href="">More info >></a>
+        </div>
+    </div>
+</div>
+
+ <!-- Controls -->
+      <button type="button" class="absolute top-1/2 left-0 z-30 flex items-center justify-center h-10 w-10 bg-black/50 rounded-full -translate-y-1/2" data-carousel-prev>
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button type="button" class="absolute top-1/2 right-0 z-30 flex items-center justify-center h-10 w-10 bg-black/50 rounded-full -translate-y-1/2" data-carousel-next>
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+    </div>
+  
   <!-- FOOTER -->
   <footer class="bg-sky-300 bg-opacity-80 py-5 mt-5">
     <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center text-white select-text">
@@ -154,7 +165,7 @@
       </div>
 
       <div class="space-y-3 text-center md:text-left font-mono uppercase tracking-widest text-white select-text">
-        <p>Hubungi Kami :</p>
+        <a href="/">Hubungi Kami :</a>
         <p>+6285869759430</p>
         <p>SituCileuncaOficial</p>
         <p>SituCileuncaOficial</p>
